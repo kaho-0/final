@@ -16,10 +16,10 @@
         <body>
             <?php
             $pdo = new PDO($connect, USER, PASS);
-            $sql = $pdo->execute('select * from list');
-            foreach ($sql as $row) {
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            foreach ($data as $row) {
                 $name=$row['listName'];
-                $id=$row['listId'];
+                $id=$row['listId']
                 echo '$name';
                 echo '<a href="detail.php?listId=',$id,'">',$row['listid'],'</a>';
             }
