@@ -23,7 +23,7 @@
              
     if (isset($_GET['listId'])) {
         $listId = $_GET['listId'];
-        $sql = $pdo->prepare('SELECT * FROM music WHERE listId = :listId');
+        $sql = $pdo->prepare('SELECT * FROM music WHERE listId = :listId order by ');
         $sql->bindParam(':listId', $listId, PDO::PARAM_INT);
         $sql->execute();
         echo '<table>';
