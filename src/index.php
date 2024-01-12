@@ -25,8 +25,6 @@
                 echo '<a href="detail.php?listId=', $id, '">',$row['listName'],'</a>';
                 echo '<br>';
             }
-            
-                echo '<form action="add-input.php" method="post"><input type="submit" value="', $id, '">登録</form>';
                 ?>
        </body>
     </html>
