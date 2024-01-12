@@ -19,7 +19,7 @@
                 $sql = $pdo ->prepare('insert into music(listId, musicName, musicCreater, category, musicURL) values(?, ?, ?, ?, ?)');
                 if ( empty($_POST['name'])) {
                     echo '曲名を入力してください。';
-                } else if ( empty($_POST['creater'])) {
+                } else if ( empty($_POST['musicCreater'])) {
                     echo 'アーティストを入力してください。';
                 } else if ( empty($_POST['category'])) {
                     echo 'カテゴリーを入力してください。';

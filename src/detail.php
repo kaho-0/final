@@ -16,26 +16,40 @@
         <body>
             <h1>プレイリスト</h1>
             <a href="music-add-input.php">登録</a>
-            <a href="delete-input.php">削除</a>
-            <a href="update-input.php">更新</a>
             <?php
              $pdo = new PDO($connect, USER, PASS);
              
     if (isset($_GET['listId'])) {
         $listId = $_GET['listId'];
-        $sql = $pdo->prepare('SELECT * FROM music WHERE listId = :listId order by ');
+        $sql = $pdo->prepare('SELECT * FROM music WHERE listId = :listId order by musicId');
         $sql->bindParam(':listId', $listId, PDO::PARAM_INT);
         $sql->execute();
+        
+        // 更新ボタン
+        echo '<form action="music-update-input.php" method="post">';
+        echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
+        echo '<button type="submit">更新</button>';
+        echo '</form>';
+
+        // 削除ボタン
+        echo '<form action="music-delete-input.php" method="post">';
+        echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
+        echo '<button type="submit">削除</button>';
+        echo '</form>';
+
         echo '<table>';
-        echo '<tr><th>曲名</th><th>アーティスト</th><th>動画</th></tr>';
+        echo '<tr><th>曲名</th><th>アーティスト</th><th>カテゴリ</th><th>動画</th><th></th></tr>';
         foreach ($sql as $row) {
             echo '<tr><td>';
             echo $row['musicName'];
             echo '</td><td>';
             echo $row['musicCreater'];
             echo '</td><td>';
+            echo $row['category'];
+            echo '</td><td>';
             echo $row['musicURL'];
-            echo '</td></tr>';
+            echo '</td>';
+            echo '</tr>';
         }
         echo '</table>';
             }
