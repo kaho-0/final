@@ -24,14 +24,13 @@
                 } else if ( empty($_POST['category'])) {
                     echo 'カテゴリーを入力してください。';
                 } else if ( $sql->execute([$_POST['listId'],$_POST['name'],$_POST['creater'],$_POST['category'],$_POST['URL']])){
-                    echo '<font color="red"> 追加に成功しました。</font>';
+                    echo '追加に成功しました。';
                 } else {
-                    echo '<font color="red"> 追加に失敗しました。</font>';
+                    echo '追加に失敗しました。';
                 } 
+                echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
             ?>
             <br><hr><br>
-            <form action="detail.php" method="post">
-                <button type="submit">追加画面へ戻る</button>
-            </form>
+            
         </body>
     </html>
