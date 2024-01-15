@@ -21,8 +21,12 @@
 		<div class="th1">動画</div>
 <?php
     $pdo=new PDO($connect, USER, PASS);
-
-	foreach ($pdo->query('select * from music') as $row) {
+	$listId = $_POST['listId'];
+	$sql = $pdo->prepare('SELECT * FROM music WHERE listId = :listId order by musicId');
+	$sql->bindParam(':listId', $listId, PDO::PARAM_INT);
+	$sql->execute();
+	
+	foreach ($sql as $row){
 		echo '<form action="music-update-output.php" method="post">';
 		echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
 		echo '<div class="td0">', $row['musicId'], '</div>';

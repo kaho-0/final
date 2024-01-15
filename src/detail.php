@@ -28,6 +28,7 @@
         // 更新ボタン
         echo '<form action="music-update-input.php" method="post">';
         echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
+        echo '<input type="hidden" name="listId" value="', $row['listId'], '">';
         echo '<button type="submit">更新</button>';
         echo '</form>';
 
