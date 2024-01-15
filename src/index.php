@@ -15,10 +15,23 @@
         </head>
         <body>
             <h1>プレイリスト</h1>
+            <a href="list-add-input.php">登録</a>
             <?php
             $pdo = new PDO($connect, USER, PASS);
             $sql = $pdo->prepare('select * from list');
             $sql->execute();
+
+            // 更新ボタン
+            echo '<form action="list-update-input.php" method="post">';
+            echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
+            echo '<button type="submit">更新</button>';
+            echo '</form>';
+    
+            // 削除ボタン
+            echo '<form action="list-delete-input.php" method="post">';
+            echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
+            echo '<button type="submit">削除</button>';
+            echo '</form>';
             foreach ($sql as $row) {
                 $name=$row['listName'];
                 $id=$row['listId'];
