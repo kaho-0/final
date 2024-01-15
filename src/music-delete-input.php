@@ -13,6 +13,7 @@
 		<title>プレイリスト</title>
 	</head>
 	<body>
+    <form action="music-delete-output.php" method="POST">
         <table>
     <tr><th>曲名</th><th>アーティスト名</th><th>カテゴリー</th><th>動画</th></tr>
 <?php
@@ -23,15 +24,15 @@
         echo '<td>', $row['musicCreater'], '</td>';
         echo '<td>', $row['category'], '</td>';
         echo '<td>', $row['musicURL'], '</td>';
-        echo '<td>';
-        echo '<a href="music-delete-output.php?musicId=', $row['musicId'],'">削除</a>';
         echo '<input type="hidden" name="listId" value="', $row['listId'], '">';
         echo '<td>';
+        echo '<a href="music-delete-output.php?musicId=', $row['musicId'],'">削除</a>';
+        echo '</td>';
         echo '</tr>';
-        echo "\n";
+        
     }
-
 ?>
     </table>
+    </form>
     </body>
 </html>

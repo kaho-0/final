@@ -32,7 +32,8 @@
                 曲名<input type="text" name="name"><br>
                 アーティスト<input type="text" name="creater"><br>
                 カテゴリ<input type="text" name="category"><br>
-                埋め込みURL<input type="text" name="URL"><br>
+                楽曲URL<input type="text" name="URL"><br>
+                埋め込みURLの[https://～]以降のURLのみを登録すると、プレイリスト画面で動画の再生が可能です
                 <button type="submit">追加</button>
             </form>
         </body>

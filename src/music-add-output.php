@@ -19,16 +19,20 @@
                 $sql = $pdo ->prepare('insert into music(listId, musicName, musicCreater, category, musicURL) values(?, ?, ?, ?, ?)');
                 if ( empty($_POST['name'])) {
                     echo '曲名を入力してください。';
-                } else if ( empty($_POST['musicCreater'])) {
+                    echo '<a href="music-add-input.php">登録画面に戻る</a>';
+                } else if ( empty($_POST['creater'])) {
                     echo 'アーティストを入力してください。';
+                    echo '<a href="music-add-input.php">登録画面に戻る</a>';
                 } else if ( empty($_POST['category'])) {
                     echo 'カテゴリーを入力してください。';
+                    echo '<a href="music-add-input.php">登録画面に戻る</a>';
                 } else if ( $sql->execute([$_POST['listId'],$_POST['name'],$_POST['creater'],$_POST['category'],$_POST['URL']])){
                     echo '追加に成功しました。';
+                    echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
                 } else {
                     echo '追加に失敗しました。';
+                    echo '<a href="music-add-input.php">登録画面に戻る</a>';
                 } 
-                echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
             ?>
             <br><hr><br>
             

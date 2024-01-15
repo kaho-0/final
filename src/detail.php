@@ -48,16 +48,17 @@
             echo $row['category'];
             echo '</td><td>';
             $youtube = $data = null;
-        if (isset($row['musicURL']) == true){
 
-		if (strpos($youtube_url, "embed")) {
-            $youtube = '<iframe width="560" height="315" src="'. $row['musicURL']. '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-        } else {
-            $youtube = '<a href="'. $row['musicURL']. '" value="'. $row['musicName']. 'をYouTubeで聴く"></a>';
-        }
-        } else {
-            echo 'URLが登録されていません。';
-        }
+            if (!empty($row['musicURL'])){
+                $youtube_url = $row['musicURL'];
+		    if (strpos($youtube_url, "embed")) {
+                $youtube = '<iframe width="560" height="315" src="'. $row['musicURL']. '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+            } else {
+                $youtube = '<a href="'. $row['musicURL']. '"> '. $row['musicName']. 'をYouTubeで聴く</a>';
+            }
+            } else {
+                $youtube = 'URLが登録されていません。';
+            }
             echo $youtube;
             echo '</td>';
             echo '</tr>';

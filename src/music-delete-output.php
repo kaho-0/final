@@ -14,6 +14,7 @@
 	</head>
 	<body>
 <?php
+    var_dump($_GET);
     $pdo=new PDO($connect, USER, PASS);
     $sql=$pdo->prepare('delete from music where musicId = ?');
     if ( $sql->execute([$_GET['musicId']])){
@@ -23,7 +24,6 @@
     }
     echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
 ?>
-    
     </body>
 </html>
 
