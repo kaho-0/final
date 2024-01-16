@@ -11,6 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <title>プレイリスト</title>
+        <link rel="stylesheet" href="./css/list.css">
     </head>
     <body>
 <?php

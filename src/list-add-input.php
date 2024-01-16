@@ -13,12 +13,12 @@
         <head>
             <meta charset="UTF-8">
             <title>プレイリスト</title>
+        <link rel="stylesheet" href="./css/list.css">
         </head>
         <body>
             <h1>新規プレイリストの作成</h1>
             <form action="list-add-output.php" method="POST">
                 <br>
-                リストID <input type="text" name="listId"><br>
                 リスト名<input type="text" name="listName"><br>
                 <button type="submit">追加</button>
             </form>

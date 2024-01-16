@@ -11,10 +11,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>プレイリスト</title>
+            <link rel="stylesheet" href="./css/music.css">
 	</head>
 	<body>
 <?php
-    var_dump($_GET);
     $pdo=new PDO($connect, USER, PASS);
     $sql=$pdo->prepare('delete from music where musicId = ?');
     if ( $sql->execute([$_GET['musicId']])){
@@ -22,7 +22,7 @@
     } else {
         echo '削除に失敗しました';
     }
-    echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
+    echo '<a href="detail.php?listId=', $_GET['listId'], '">プレイリストに戻る</a>';
 ?>
     </body>
 </html>

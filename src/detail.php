@@ -12,10 +12,10 @@
         <head>
         <meta charset="UTF-8">
         <title>プレイリスト</title>
+        <link rel="stylesheet" href="./css/music.css">
         </head>
         <body>
             <h1>プレイリスト</h1>
-            <a href="music-add-input.php">登録</a>
             <?php
              $pdo = new PDO($connect, USER, PASS);
              
@@ -25,20 +25,16 @@
         $sql->bindParam(':listId', $listId, PDO::PARAM_INT);
         $sql->execute();
         
+        echo '<div class="button_solid017"><a href="music-add-input.php">登録</a>';
+
         // 更新ボタン
-        echo '<form action="music-update-input.php" method="post">';
-        echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
-        echo '<input type="hidden" name="listId" value="', $row['listId'], '">';
-        echo '<button type="submit">更新</button>';
-        echo '</form>';
+        echo '<a href="music-update-input.php?listId=', $listId, '">更新</a>';
 
         // 削除ボタン
-        echo '<form action="music-delete-input.php" method="post">';
-        echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
-        echo '<button type="submit">削除</button>';
-        echo '</form>';
+        echo '<a href="music-delete-input.php?listId=', $listId, '">削除</a></div>';
 
-        echo '<table>';
+        echo '<br><br>';
+        echo '<table class="design02">';
         echo '<tr><th>曲名</th><th>アーティスト</th><th>カテゴリ</th><th>動画</th><th></th></tr>';
         foreach ($sql as $row) {
             echo '<tr><td>';
@@ -53,7 +49,7 @@
             if (!empty($row['musicURL'])){
                 $youtube_url = $row['musicURL'];
 		    if (strpos($youtube_url, "embed")) {
-                $youtube = '<iframe width="560" height="315" src="'. $row['musicURL']. '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+                $youtube = '<iframe width="336" height="189" src="'. $row['musicURL']. '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
             } else {
                 $youtube = '<a href="'. $row['musicURL']. '"> '. $row['musicName']. 'をYouTubeで聴く</a>';
             }

@@ -13,6 +13,7 @@
         <head>
             <meta charset="UTF-8">
             <title>プレイリスト</title>
+            <link rel="stylesheet" href="./css/music.css">
         </head>
         <body>
             <h1>プレイリストへ曲の追加</h1>

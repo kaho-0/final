@@ -11,10 +11,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>プレイリスト</title>
+        <link rel="stylesheet" href="./css/list.css">
 	</head>
 	<body>
 <?php
-    $listId = $_POST['listId'];
+    $listId = $_GET['listId'];
     try {
     $pdo=new PDO($connect, USER, PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -1,0 +1,78 @@
+body{
+    text-align: center;
+}
+
+/* 登録　更新　削除 */
+.button_solid017 a {
+    padding: 20px 30px;
+    position: relative;
+    display: inline-block;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 40px;
+    padding: 10px 25px;
+    color: #C69774;
+    transition: 0.3s ease-in-out;
+    font-weight: 600;
+    background: #eeee;
+    border-radius: 50px;
+    border: 0.2rem solid #C69774;
+    box-shadow: 0.2rem 0.2rem 0px 0.1rem #cccccc;
+}
+.button_solid017 a:hover {
+  transform: translate3d(0.2rem, 0.2rem, 0);
+  box-shadow: none;
+  opacity: 1;
+  transition: all 0.2s;
+}
+.button_solid017 a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #C69774;
+    border-right: 3px solid #C69774;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+
+
+/* リスト表示 */
+.button001 a {
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 280px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+}
+.button001 a:hover {
+    background: #313131;
+    color: #FFF;
+}
+.button001 a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid #313131;
+    border-right: 3px solid #313131;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.button001 a:hover:after {
+    border-color: #FFF;
+}

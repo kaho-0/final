@@ -12,18 +12,16 @@
         <head>
             <meta charset="UTF-8">
             <title>プレイリスト</title>
+        <link rel="stylesheet" href="./css/list.css">
         </head>
         <body>
             <?php
                 $pdo = new PDO($connect, USER, PASS);
-                $sql = $pdo ->prepare('insert into list(listId,listName) values(?,?)');
-                if ( empty($_POST['listId'])) {
-                    echo 'リストIDを入力してください';
-                    echo '<a href="list-add-input.php">登録画面に戻る</a>';
-                } else if ( empty($_POST['listName'])) {
+                $sql = $pdo ->prepare('insert into list(listName) values(?)');
+                if ( empty($_POST['listName'])) {
                     echo 'リスト名を入力してください';
                     echo '<a href="list-add-input.php">登録画面に戻る</a>';
-                } else if ( $sql->execute([$_POST['listId'],$_POST['listName']])){
+                } else if ( $sql->execute([$_POST['listName']])){
                     echo '追加に成功しました。';
                     echo '<a href="index.php">プレイリスト一覧に戻る</a>';
                 } else {

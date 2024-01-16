@@ -11,14 +11,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>プレイリスト</title>
+        <link rel="stylesheet" href="./css/list.css">
 	</head>
 	<body>
-    <form action="list-delete-output.php" method="POST">
+        <h1>プレイリストの削除</h1>
+    <form action="list-delete-output.php" method="GET">
 <?php
     $pdo=new PDO($connect, USER, PASS);
     foreach ($pdo->query('select * from list') as $row ) {
         echo $row['listName'];
-        echo '<a href="list-delete-output.php?listId=', $row['listId'],'">削除</a>';
+        echo '<a href="list-delete-output.php?&listId=', $row['listId'], '">削除</a>';
         echo '<br>';
     }
 ?>

@@ -12,6 +12,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="style.css">
 		<title>プレイリスト</title>
+		<link rel="stylesheet" href="./css/music.css">
 	</head>
 	<body>
 		<div class="th0">楽曲ID</div>
@@ -21,7 +22,7 @@
 		<div class="th1">動画</div>
 <?php
     $pdo=new PDO($connect, USER, PASS);
-	$listId = $_POST['listId'];
+	$listId = $_GET['listId'];
 	$sql = $pdo->prepare('SELECT * FROM music WHERE listId = :listId order by musicId');
 	$sql->bindParam(':listId', $listId, PDO::PARAM_INT);
 	$sql->execute();

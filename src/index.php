@@ -12,31 +12,25 @@
         <head>
         <meta charset="UTF-8">
         <title>プレイリスト</title>
+        <link rel="stylesheet" href="./css/list.css">
         </head>
         <body>
             <h1>プレイリスト</h1>
-            <a href="list-add-input.php">登録</a>
+            <div class="button_solid017">
+                <a href="list-add-input.php">登録</a>
+                <a href="list-update-input.php">更新</a>
+                <a href="list-delete-input.php">削除</a>
+            </div>
             <?php
             $pdo = new PDO($connect, USER, PASS);
             $sql = $pdo->prepare('select * from list');
             $sql->execute();
-
-            // 更新ボタン
-            echo '<form action="list-update-input.php" method="post">';
-            echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
-            echo '<button type="submit">更新</button>';
-            echo '</form>';
-    
-            // 削除ボタン
-            echo '<form action="list-delete-input.php" method="post">';
-            echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
-            echo '<button type="submit">削除</button>';
-            echo '</form>';
+            echo '<br>';
+            
             foreach ($sql as $row) {
                 $name=$row['listName'];
                 $id=$row['listId'];
-                echo '<a href="detail.php?listId=', $id, '">',$row['listName'],'</a>';
-                echo '<br>';
+                echo '<div class="button001"><a href="detail.php?listId=', $id, '">',$row['listName'],'</a></div>';
             }
                 ?>
        </body>
