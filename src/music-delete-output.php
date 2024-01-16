@@ -22,7 +22,7 @@
     } else {
         echo '削除に失敗しました';
     }
-    echo '<a href="detail.php?listId=', $_GET['listId'], '">プレイリストに戻る</a>';
+    echo '<div class="button_solid017"><a href="detail.php?listId=', $_GET['listId'], '">プレイリストに戻る</a></div>';
 ?>
     </body>
 </html>

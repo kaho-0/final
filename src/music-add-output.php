@@ -32,7 +32,7 @@
                     echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
                 } else {
                     echo '追加に失敗しました。';
-                    echo '<a href="music-add-input.php">登録画面に戻る</a>';
+                    echo '<div class="button_solid017"><a href="music-add-input.php">登録画面に戻る</a></div>';
                 } 
             ?>
             <br><hr><br>

@@ -1,10 +1,6 @@
 body{
     text-align: center;
 }
-table {
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /* 登録　更新　削除 */
 .button_solid017 a {
@@ -13,7 +9,7 @@ table {
     justify-content: space-around;
     align-items: center;
     margin: 0 auto;
-    max-width: 40px;
+    max-width: 200px;
     padding: 10px 25px;
     color: #C69774;
     transition: 0.3s ease-in-out;
@@ -22,6 +18,7 @@ table {
     border-radius: 50px;
     border: 0.2rem solid #C69774;
     box-shadow: 0.2rem 0.2rem 0px 0.1rem #cccccc;
+    margin : 5px;
 }
 .button_solid017 a:hover {
   transform: translate3d(0.2rem, 0.2rem, 0);
@@ -45,11 +42,13 @@ table {
 
 /* テーブル */
 .design02 {
-    width: 100%;
+    width: auto;
     text-align: center;
     border-collapse: collapse;
     border-spacing: 0;
     border: solid 1px #F8DFD4;
+    margin-right: auto;
+    margin-left: auto;
    }
    .design02 tr {
     border-top: dashed 1px #F8DFD4;
@@ -61,3 +60,21 @@ table {
    .design02 td {
     padding: 10px;
    }
+
+   /* 完了画面 */
+   .box2 {
+    padding: 50px 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    width: 600px;
+    font-weight: bold;
+    color: #000000ee;/*文字色*/
+    /* background: #ffffff; */
+    border: solid 3px #F8DFD4;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.box2 p {
+    margin: 0; 
+    padding: 0;
+}

@@ -15,12 +15,10 @@
 		<link rel="stylesheet" href="./css/music.css">
 	</head>
 	<body>
-		<div class="th0">楽曲ID</div>
-		<div class="th1">曲名</div>
-		<div class="th1">アーティスト名</div>
-		<div class="th1">カテゴリー</div>
-		<div class="th1">動画</div>
-<?php
+		<h1>プレイリストの編集</h1>
+		<table class="design02">
+    		<tr><th>曲名</th><th>アーティスト名</th><th>カテゴリー</th><th>動画</th><th>更新</th></tr>
+		<?php
     $pdo=new PDO($connect, USER, PASS);
 	$listId = $_GET['listId'];
 	$sql = $pdo->prepare('SELECT * FROM music WHERE listId = :listId order by musicId');
@@ -30,25 +28,24 @@
 	foreach ($sql as $row){
 		echo '<form action="music-update-output.php" method="post">';
 		echo '<input type="hidden" name="musicId" value="', $row['musicId'], '">';
-		echo '<div class="td0">', $row['musicId'], '</div>';
-		echo '<div class="td1">';
+		echo '<tr>';
+		echo '<td>';
 		echo '<input type="text" name="musicName" value="', $row['musicName'], '">';
-		echo '</div> ';
-		echo '<div class="td1">';
+		echo '</td> ';
+		echo '<td>';
 		echo '<input type="text" name="musicCreater" value="', $row['musicCreater'], '">';
-		echo '</div> ';
-		echo '<div class="td1">';
+		echo '</td> ';
+		echo '<td>';
 		echo '<input type="text" name="category" value="', $row['category'], '">';
-		echo '</div> ';
-        echo '<div class="td1">';
+		echo '</td> ';
+        echo '<td>';
 		echo '<input type="text" name="musicURL" value="', $row['musicURL'], '">';
-		echo '</div> ';
-		echo '<div class="td2"><input type="submit" value="更新"></div>';
+		echo '</td> ';
+		echo '<td><input type="submit" value="更新"></td>';
 		echo '<input type="hidden" name="listId" value="', $row['listId'], '">';
-		echo '</form>';
-		echo "\n";
+		echo '</tr>';
 	}
 ?>
-
+	</table></form>
     </body>
 </html>

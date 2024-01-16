@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="./css/music.css">
     </head>
     <body>
+        <style>
+            backgraund-color: #F8DFD4;
+        </style>
 <?php
     $pdo=new PDO($connect, USER, PASS);
     $sql=$pdo->prepare('update music set musicName=?, musicCreater=?, category=?, musicURL=? where musicId=?');
@@ -24,11 +27,12 @@
     } else if ( empty($_POST['category'])) {
         echo 'カテゴリーを入力してください。';
     } else if($sql->execute([htmlspecialchars($_POST['musicName']),$_POST['musicCreater'],$_POST['category'],$_POST['musicURL'],$_POST['musicId']])){
-        echo '更新に成功しました。';
+        echo '<div class="box2">更新に成功しました。</div>';
     } else{
-        echo '更新に失敗しました。';
+        echo '<div class="box2">更新に失敗しました。</div>';
     }
-    echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
+    echo '<br>';
+    echo '<div class="button_solid017"><a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a></div>';
 ?>
     </body>
 </html>

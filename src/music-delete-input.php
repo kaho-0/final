@@ -14,9 +14,10 @@
             <link rel="stylesheet" href="./css/music.css">
 	</head>
 	<body>
+        <h1>プレイリストから曲の削除</h1>
     <form action="music-delete-output.php" method="GET">
-        <table>
-    <tr><th>曲名</th><th>アーティスト名</th><th>カテゴリー</th><th>動画</th></tr>
+        <table class="design02">
+    <tr><th>曲名</th><th>アーティスト名</th><th>カテゴリー</th><th>動画</th><th>削除</th></tr>
 <?php
     $pdo=new PDO($connect, USER, PASS);
     if (isset($_GET['listId'])) {
