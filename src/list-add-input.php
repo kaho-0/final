@@ -18,9 +18,15 @@
         <body>
             <h1>新規プレイリストの作成</h1>
             <form action="list-add-output.php" method="POST">
-                <br>
-                リスト名<input type="text" name="listName"><br>
-                <button type="submit">追加</button>
+                <div class="Form">
+                    <div class="Form-Item">
+                        <p class="Form-Item-Label">
+                        <span class="Form-Item-Label-Required">必須</span>リスト名
+                        </p>
+                        <input type="text" class="Form-Item-Input" name="listName">
+                    </div>
+                    <input type="submit" class="Form-Btn" value="追加">
+                </div>  
             </form>
         </body>
         </html>

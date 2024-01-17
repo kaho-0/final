@@ -31,7 +31,9 @@
         echo '<a href="music-update-input.php?listId=', $listId, '">更新</a>';
 
         // 削除ボタン
-        echo '<a href="music-delete-input.php?listId=', $listId, '">削除</a></div>';
+        echo '<a href="music-delete-input.php?listId=', $listId, '">削除</a>';
+
+        echo '<a href="index.php">プレイリスト一覧</a></div>';
 
         echo '<br><br>';
         echo '<table class="design02">';

@@ -19,23 +19,23 @@
                 $pdo = new PDO($connect, USER, PASS);
                 $sql = $pdo ->prepare('insert into music(listId, musicName, musicCreater, category, musicURL) values(?, ?, ?, ?, ?)');
                 if ( empty($_POST['name'])) {
-                    echo '曲名を入力してください。';
+                    echo '<div class="box2">曲名を入力してください。</div>';
                     echo '<a href="music-add-input.php">登録画面に戻る</a>';
                 } else if ( empty($_POST['creater'])) {
-                    echo 'アーティストを入力してください。';
+                    echo '<div class="box2">アーティストを入力してください。</div>';
                     echo '<a href="music-add-input.php">登録画面に戻る</a>';
                 } else if ( empty($_POST['category'])) {
-                    echo 'カテゴリーを入力してください。';
+                    echo '<div class="box2">カテゴリーを入力してください。</div>';
                     echo '<a href="music-add-input.php">登録画面に戻る</a>';
                 } else if ( $sql->execute([$_POST['listId'],$_POST['name'],$_POST['creater'],$_POST['category'],$_POST['URL']])){
-                    echo '追加に成功しました。';
-                    echo '<a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a>';
+                    echo '<div class="box2">追加に成功しました。</div>';
+                    echo '<div class="button_solid017"><a href="detail.php?listId=', $_POST['listId'], '">プレイリストに戻る</a></div>';
                 } else {
-                    echo '追加に失敗しました。';
+                    echo '<div class="box2">追加に失敗しました。</div>';
                     echo '<div class="button_solid017"><a href="music-add-input.php">登録画面に戻る</a></div>';
                 } 
             ?>
-            <br><hr><br>
+            <br><br>
             
         </body>
     </html>

@@ -27,13 +27,13 @@
 
     $sql=$pdo->prepare('delete from list where listId = ?');
     $sql->execute([$_GET['listId']]);
-        echo '削除に成功しました';
+        echo '<div class="box2">削除に成功しました</div>';
     } catch (PDOException $e) {
-        echo '削除中にエラーが発生しました: ' . $e->getMessage();
+        echo '<div class="box2">削除中にエラーが発生しました: ' . $e->getMessage(). '</div>';
     } finally {
         $pdo = null;
     }
-    echo '<a href="index.php">プレイリスト一覧に戻る</a>';
+    echo '<div class="button_solid017"><a href="index.php">プレイリスト一覧に戻る</a></div>';
 ?>
     </body>
 </html>

@@ -16,22 +16,23 @@
 	</head>
 	<body>
 		<h1>プレイリスト名の変更</h1>
-		<!-- <div class="th0">リストID</div>
-		<div class="th1">リスト名</div> -->
+		<table class=design02>
+			<tr><th>リストID</th><th>リスト名</th><th>更新</th></tr>
 <?php
     $pdo=new PDO($connect, USER, PASS);
-	echo '<form action="list-update-output.php" method="post">';
 
 	foreach ($pdo->query('select * from list') as $row) {
+		echo '<tr>';
+		echo '<form action="list-update-output.php" method="post">';
 		echo '<input type="hidden" name="listId" value="', $row['listId'], '">';
-		echo '<div class="td0">リストID　', $row['listId'], '</div>';
-		echo '<div class="td1">リスト名　';
+		echo '<td>', $row['listId'], '</td>';
+		echo '<td>';
 		echo '<input type="text" name="listName" value="', $row['listName'], '">';
-		echo '</div> ';
-		echo '<div class="td2"><input type="submit" value="更新"></div>';
+		echo '</td> ';
+		echo '<td><input type="submit" value="更新"></td>';
+		echo '</form></tr>';
 	}
-	echo '</form>';
 ?>
-
+		</table>
     </body>
 </html>

@@ -30,12 +30,27 @@
                 echo '</select>';
                 ?>
                 <br>
-                曲名<input type="text" name="name"><br>
-                アーティスト<input type="text" name="creater"><br>
-                カテゴリ<input type="text" name="category"><br>
-                楽曲URL<input type="text" name="URL"><br>
-                埋め込みURLの[https://～]以降のURLのみを登録すると、プレイリスト画面で動画の再生が可能です
-                <button type="submit">追加</button>
-            </form>
-        </body>
-        </html>
+                <div class="Form">
+                  <div class="Form-Item">
+                    <p class="Form-Item-Label">
+                      <span class="Form-Item-Label-Required">必須</span>曲名
+                        </p>
+                            <input type="text" class="Form-Item-Input" name="name" placeholder="例）青と夏">
+                            </div>
+                                <div class="Form-Item">
+                                    <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>アーティスト名</p>
+                                    <input type="text" class="Form-Item-Input" name="creater" placeholder="例）Mrs. GREEN APPLE">
+                                </div>
+                                <div class="Form-Item">
+                                    <p class="Form-Item-Label"><span class="Form-Item-Label-Required">必須</span>カテゴリー</p>
+                                    <input type="text" class="Form-Item-Input" name="category" placeholder="例）J-POP">
+                                </div>
+                                    <div class="Form-Item">
+                                        <p class="Form-Item-Label">楽曲URL</p>
+                                        <input type="text" class="Form-Item-Input" name="URL" placeholder="例）https://www.youtube.com/embed/m34DPnRUfMU?si=pswBuJoaM9gSCuMj">
+                                    </div>
+                                    <input type="submit" class="Form-Btn" value="追加">
+                                </div>  
+                            </form>
+                        </body>
+                    </html>
