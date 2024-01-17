@@ -22,14 +22,16 @@
                 $pdo = new PDO($connect, USER, PASS);
                 $sql = $pdo->prepare('SELECT * FROM list');
                 $sql->execute();
-
+                
+                echo '<div class="cp_ipselect cp_sl03">';
                 echo '<select name="listId">';
+                echo '<option value="" hidden>リスト選択</option>';
                 foreach( $sql as $row ){
                     echo '<option value="' , $row['listId'] , '">' , $row['listName'] , '</option>';
                 }
                 echo '</select>';
+                echo '</div>';
                 ?>
-                <br>
                 <div class="Form">
                   <div class="Form-Item">
                     <p class="Form-Item-Label">
